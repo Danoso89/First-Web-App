@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+  head
+    title APP
+    link(href='node_modules/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+    link(href='css/custom.css', rel='stylesheet')
+    script(src='node_modules/jquery/dist/jquery.min.js')
+    script(src='js/modulo.js')
+    script(src='js/index.js')
+  body
+    .container
+      .main-container
+        h1 Web App
+        h3 App to fetch information from a Github account, using its API
+
+        .user-input
+          input#name-search(type="text" placeholder="Insert userame")
+          button.btn.btn-info#btn-get Request
+
+        .info-container
+          p #[strong Name:] #[span#name]
+          p #[strong User name:] #[span#user-name]
+          p #[strong Public repositories:] #[span#repos]
+

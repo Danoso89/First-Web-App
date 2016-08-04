@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>APP</title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="js/modulo.js"></script>
+    <script src="js/index.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-container">
+        <h1>Web App</h1>
+        <h3>App to fetch information from a Github account, using its API</h3>
+        <div class="user-input">
+          <input id="name-search" type="text" placeholder="Insert userame">
+          <button id="btn-get" class="btn btn-info">Request</button>
+        </div>
+        <div class="info-container">
+          <p><strong>Name:</strong> <span id="name"></span></p>
+          <p><strong>User name:</strong> <span id="user-name"></span></p>
+          <p><strong>Public repositories:</strong> <span id="repos"></span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
