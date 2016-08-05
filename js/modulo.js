@@ -1,4 +1,4 @@
-var ModuloAPI = (function() {
+var ModuloAPI = (function($) {
 
   var api = {};
   api.getData = function(url, callback) {
@@ -10,4 +10,4 @@ var ModuloAPI = (function() {
   };
 
   return api;
-})()
+})(jQuery)
