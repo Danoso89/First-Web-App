@@ -1,55 +1,32 @@
-﻿{
-
+{
   "name": "first-web-app",
-
   "version": "1.0.0",
-
   "description": "The first web app that I will create to learn how to do them",
-
   "main": "index.js",
-
-
   "repository": {
-
     "type": "git",
-
     "url": "git+https://github.com/Danoso89/First-Web-App.git"
-
   },
-
-
   "keywords": [
-
     "web",
-
     "app",
-
     "github",
-
     "api"
-
   ],
-
-
   "author": "Daniel González Reina",
-
   "license": "ISC",
-
   "bugs": {
-
     "url": "https://github.com/Danoso89/First-Web-App/issues"
-
   },
-
   "homepage": "https://github.com/Danoso89/First-Web-App#readme",
-
-
   "dependencies": {
-
     "bootstrap": "^3.3.7",
-
     "jquery": "^3.1.0"
-
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jade": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
   }
-
 }
