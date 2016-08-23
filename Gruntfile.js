@@ -22,12 +22,23 @@ module.exports = function (grunt) {
     },
 
     jade: {
-
+      compile: {
+        options: {
+          pretty: true
+        },
+        files: {
+          "index.html": "index.jade"
+        }
+      }
     },
 
     watch: {
       options: {
         livereload: 3000
+      },
+      jade: {
+        files: 'index.jade',
+        tasks: ['jade']
       },
       sass: {
         files: 'css/*.sass',
@@ -43,7 +54,7 @@ module.exports = function (grunt) {
     
   });
 
-  grunt.registerTask('default', ['sass']);
+  grunt.registerTask('default', ['sass', 'jade', 'watch']);
   grunt.registerTask('changes', ['watch']);
   
   /*grunt.registerTask('watch', 'My "watch" task description.', function() {
