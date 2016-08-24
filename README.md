@@ -21,9 +21,10 @@ For this part I have used:
 
 ### Week 3
 
-As of 24 August 2016, the app has a back-end developped with Node.js. When the info is received from the Github API, the front-end app calls the back-end, passing the relevant data to the server, and then the server persist this data.
+As of 24 August 2016, the app has a back-end developped with Node.js. When the info is received from the Github API, the front-end app calls the back-end, passing the relevant data to the server, and then the server persist this data. The callback passed when calling the Github API has been changed to implement it as jQuery promises, and the calls to the server have been created using promises too. I have implemented two promises: promised returned by jQuery ajax methods, and promises returned by Deferred.promise().
 
 For this part I have used:  
+* Promises
 * Node:
   * FileSystem
   * Path
