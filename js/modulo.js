@@ -23,6 +23,12 @@ var ModuloAPI = (function($) {
     $.getJSON(url, data => deferred.resolve(data));
     console.log('promise attached to the JSON, ready to return it');
     return deferred.promise();
+  },
+
+  api.persistData = function(data) {
+    // Send a POST request to the server
+    $.post('http://localhost:5000/api/savedata', data)
+        .done(res => console.log('SERVER: ' + res));
   }
 
   return api;

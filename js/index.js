@@ -14,18 +14,20 @@
     $('#btn-get').click(function() {
       var userName = $("input").val();
       if (!!userName) {
-        console.log('llama a la api con userName = ' + userName);
+        console.log('Calling GitHub API = ' + userName);
         ModuloAPI.getData(baseUrl + userName).done(data => {
-          console.log('Working with promises :)')
           $(".info-container").slideDown();
+
+          var relevantData = {name: data.name, user: data.login,
+        repos: data.public_repos};
           
           // Save relevant info in local storage
-          localStorage.setItem(data.login,
-              JSON.stringify({name: data.name, user: data.login,
-              repos: data.public_repos}));
+          localStorage.setItem(data.login, JSON.stringify(relevantData));
           $("#name").text(data.name);
           $("#user-name").text(data.login);
           $("#repos").text(data.public_repos);
+
+          ModuloAPI.persistData(relevantData);
         });
 
       } else {
