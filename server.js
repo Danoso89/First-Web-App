@@ -54,8 +54,11 @@ app.post('/api/getdata', (req, res) => {
   res.set('Access-Control-Allow-Origin', null);
 
   fs.readFile(path.join(__dirname, '/server_data/info.txt'), (err, fileData) => {
-    if (err) throw err;
-    fileObj = JSON.parse(fileData);
+    if (!!err && err.code == 'ENOENT') {
+      fileObj = {};
+    } else {
+      fileObj = JSON.parse(fileData);
+    }
     res.send(fileObj);
   });
 });

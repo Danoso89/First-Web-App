@@ -1,7 +1,0 @@
-{
-  "Laurosa": {
-    "name": "Laura García Diéguez",
-    "user": "Laurosa",
-    "repos": "1"
-  }
-}
