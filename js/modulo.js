@@ -31,5 +31,10 @@ var ModuloAPI = (function($) {
         .done(res => console.log('SERVER: ' + res));
   }
 
+  api.getData = function() {
+    return $.post('http://localhost:5000/api/getdata')
+        .done(function(res) {return 'respuesta'});
+  }
+
   return api;
 })(jQuery)

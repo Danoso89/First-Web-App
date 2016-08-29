@@ -35,6 +35,12 @@
       }
     });
 
+    $('#server-get').click(function() {
+      var serverData = ModuloAPI.getData();
+      console.log(serverData);
+      
+    });
+
   });
 
 })()
