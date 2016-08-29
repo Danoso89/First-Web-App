@@ -16,29 +16,28 @@
       if (!!userName) {
         console.log('Calling GitHub API = ' + userName);
         ModuloAPI.getData(baseUrl + userName).done(data => {
-          $(".info-container").slideDown();
 
           var relevantData = {name: data.name, user: data.login,
-        repos: data.public_repos};
+              repos: data.public_repos};
           
-          // Save relevant info in local storage
-          localStorage.setItem(data.login, JSON.stringify(relevantData));
+          // Show the relevant data to the user
+          $(".info-container").slideDown();
           $("#name").text(data.name);
           $("#user-name").text(data.login);
           $("#repos").text(data.public_repos);
 
+          // Persist the relevant data into the server
           ModuloAPI.persistData(relevantData);
         });
 
       } else {
+        // Hide the information if the user field is empty
         $(".info-container").slideUp();
       }
     });
 
     $('#server-get').click(function() {
-      var serverData = ModuloAPI.getData();
-      console.log(serverData);
-      
+      ModuloAPI.getServerData().done(res => console.log(res));
     });
 
   });
