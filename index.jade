@@ -14,13 +14,13 @@ html(lang="en")
         h1 Web App
         h3 App to fetch information from a Github account, using its API
 
+        button.btn.btn-info.btn-xs#server-get Log server data
+
         .user-input
           input#name-search(type="text" placeholder="Insert userame")
-          button.btn.btn-info#btn-get Request
+          button.btn.btn-primary#btn-get Request
 
         .info-container
           p #[strong Name:] #[span#name]
           p #[strong User name:] #[span#user-name]
           p #[strong Public repositories:] #[span#repos]
-
-      button.btn.btn-warning#server-get GET
