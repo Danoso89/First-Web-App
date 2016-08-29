@@ -15,13 +15,21 @@
       var userName = $("input").val();
       if (!!userName) {
         console.log('Calling GitHub API = ' + userName);
-        ModuloAPI.getData(baseUrl + userName).done(data => {
+        ModuloAPI.getData(baseUrl + userName)
+        .fail(err => {
+              if (err.status === 404) {
+                $(".info-container").slideUp();
+                $(".alert").slideDown();
+              }
+            })
+        .done(data => {
 
           var relevantData = {name: data.name, user: data.login,
               repos: data.public_repos};
           
           // Show the relevant data to the user
           $(".info-container").slideDown();
+          $(".alert").slideUp();
           $("#name").text(data.name);
           $("#user-name").text(data.login);
           $("#repos").text(data.public_repos);
@@ -33,6 +41,7 @@
       } else {
         // Hide the information if the user field is empty
         $(".info-container").slideUp();
+        $(".alert").slideUp();
       }
     });
 

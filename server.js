@@ -15,7 +15,6 @@ app.get('/', function (req, res) {
 });
 
 app.post('/api/savedata', (req, res) => {
-  console.log('Entra en savedata');
   res.set('Access-Control-Allow-Origin', null);
 
   fs.readFile(path.join(__dirname, '/server_data/info.txt'), (err, fileData) => {
@@ -50,7 +49,6 @@ app.post('/api/savedata', (req, res) => {
 });
 
 app.post('/api/getdata', (req, res) => {
-  console.log('Entra en getdata')
   res.set('Access-Control-Allow-Origin', null);
 
   fs.readFile(path.join(__dirname, '/server_data/info.txt'), (err, fileData) => {

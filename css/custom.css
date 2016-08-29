@@ -4,5 +4,6 @@ body .main-container .btn { margin: auto 15px; }
 body .main-container .user-input { margin-top: 20px; }
 body .main-container .user-input * { margin-left: 15px; }
 body .main-container .info-container { display: none; margin-top: 20px; }
+body .main-container .alert { display: none; margin-top: 20px; }
 
 /*# sourceMappingURL=custom.css.map */
